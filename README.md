@@ -140,16 +140,3 @@ tracker_v3/
 ```
 
 ---
-
-## Upgrading from v2 (SORT)
-
-| v2 | v3 |
-|---|---|
-| `SORTTracker` | `ByteTracker` |
-| `sort_tracker.py` | `tracker/byte_tracker.py` |
-| `target_tracker.py` | `tracker/app.py` + `tracker/renderer.py` |
-| `print()` statements | `logging` (structured, levelled) |
-| Blocking `cap.read()` | Threaded `VideoStream` |
-| PyTorch inference | OpenVINO IR (with PyTorch fallback) |
-| No skip-frame | Skip-frame Kalman coasting |
-| NMS IoU = 0.25 | NMS IoU = 0.20 (more aggressive) |
