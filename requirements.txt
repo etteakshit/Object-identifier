@@ -1,0 +1,47 @@
+# ─────────────────────────────────────────────────────────────────
+# requirements.txt
+# Universal Object Detection & Tracking System  (v3)
+# ByteTrack + OpenVINO + Threaded Capture — Roboyaan Competition
+# ─────────────────────────────────────────────────────────────────
+#
+# Install all dependencies:
+#   pip install -r requirements.txt
+#
+# Python version requirement: >= 3.10
+# ─────────────────────────────────────────────────────────────────
+
+# ── Detection engine ──────────────────────────────────────────────
+# YOLOv8 weights (yolov8n/s/m.pt) are auto-downloaded on first run.
+ultralytics>=8.2.0
+
+# ── OpenVINO inference runtime ────────────────────────────────────
+# Provides the execution provider used by Ultralytics when an
+# exported _openvino_model/ directory is loaded.
+# Supports CPU optimisation (AVX2 / AVX-512) on all platforms.
+# Intel GPU support requires an Intel iGPU (Arc / Iris Xe).
+openvino>=2024.0.0
+
+# ── Computer vision & display ─────────────────────────────────────
+# Full build includes CLAHE, VideoCapture, imshow.
+# Swap to opencv-python-headless for headless / server deployments.
+opencv-python>=4.9.0
+
+# ── Numerical computing ───────────────────────────────────────────
+numpy>=1.26.0
+
+# ── ByteTrack / SORT dependencies ────────────────────────────────
+# scipy: Hungarian assignment (linear_sum_assignment)
+scipy>=1.12.0
+
+# filterpy: Kalman filter for KalmanBoxTracker
+filterpy>=1.4.5
+
+# ─────────────────────────────────────────────────────────────────
+# Optional: AMD GPU acceleration via ONNX Runtime + DirectML
+#   (Windows only; replaces openvino for AMD Radeon iGPU users)
+# ─────────────────────────────────────────────────────────────────
+# Uncomment the line below, then run:
+#   python export_model.py --model yolov8s.pt --format onnx
+#
+# onnxruntime-directml>=1.18.0
+# ─────────────────────────────────────────────────────────────────
