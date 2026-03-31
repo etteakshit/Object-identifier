@@ -1,4 +1,4 @@
-# Universal Object Tracker v3
+# Universal Object Tracker
 ### ByteTrack + OpenVINO + Threaded Capture — Roboyaan Competition
 
 ---
